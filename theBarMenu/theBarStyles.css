@@ -1,0 +1,22 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* --Colors-- */
+:root {
+  --main-bg-color: #ede2cf;
+  --main-secondary-color: #bf9969;
+  --main-font-color: rgb(30, 30, 30);
+  --secondary-bg-color: #d94b18;
+  --taco-bg-color: #fffbf7;
+  --main-bodybg-color: #f4efe6;
+  --logo-color: rgb(85, 85, 85);
+
+  /* --Fonts-- */
+  --main-font-family: "Ubuntu", sans-serif;
+  --secondary-font-family: "Barlow Condensed", sans-serif;
+}
+
+/* --------------- THE BAR MENU _______________ */

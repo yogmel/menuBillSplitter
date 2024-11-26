@@ -1,0 +1,82 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* --Colors-- */
+:root {
+  --main-bg-color: #ede2cf;
+  --main-secondary-color: #bf9969;
+  --main-font-color: rgb(30, 30, 30);
+  --secondary-bg-color: #d94b18;
+  --taco-bg-color: #fffbf7;
+  --main-bodybg-color: #f4efe6;
+  --logo-color: rgb(85, 85, 85);
+
+  /* --Fonts-- */
+  --main-font-family: "Ubuntu", sans-serif;
+  --secondary-font-family: "Barlow Condensed", sans-serif;
+}
+/* ------------------- MAIN MENU LP ------------- */
+/* ----------- MAIN MENU BUTTONS  ---------- */
+@media (max-width: 376px) {
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 116px;
+  height: 100%;
+  background-color: var(--main-bodybg-color);
+}
+.menu-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 40vh;
+  background-color: var(--taco-bg-color);
+  border: 3px solid var(--main-secondary-color);
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.menu-button-logo {
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+  margin: auto;
+}
+
+#bar-menu {
+  background-color: var(--secondary-bg-color);
+}
+
+#ramen-menu {
+  background-color: var(--taco-bg-color);
+}
+
+/* -------Menu button hover--------- */
+.menu-button-logo:hover {
+  opacity: 50%;
+}
+
+.menu-button:hover {
+  opacity: 50%;
+}
+
+@media (min-width: 1099px) {
+  main {
+    flex-direction: row;
+    gap: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 116px;
+  }
+}
+
+/* __________MAIN MENU BUTTONS ENDS ____________ */
