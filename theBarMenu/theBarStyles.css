@@ -20,3 +20,109 @@
 }
 
 /* --------------- THE BAR MENU ----------------- */
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding-top: 116px;
+  background-color: var(--main-bodybg-color);
+}
+
+.menuSelectContainer {
+  display: grid;
+  justify-self: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+  gap: 9px;
+  max-width: 600px;
+}
+
+.menuSelectBtn {
+  padding: 6px;
+  width: 105px;
+  border: 3px solid var(--main-secondary-color);
+  border-radius: 20px;
+  background-color: var(--main-bg-color);
+  font-family: var(--main-font-family);
+  font-weight: 700;
+  color: var(--main-font-color);
+  font-size: 0.75rem;
+}
+
+.menuItemsContainer {
+  margin: 20px 0px 0px 0px;
+  padding: 10px;
+}
+
+.categoryHeading {
+  font-size: 2.5rem;
+  font-family: var(--main-font-family);
+  font-weight: 600;
+  margin-bottom: 25px;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+}
+.menuItem {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  margin: 10px 0px;
+  width: 100%;
+  border-bottom: 2px var(--main-secondary-color) dotted;
+  padding: 10px;
+  font-family: var(--main-font-family);
+  background-color: var(--main-bodybg-color);
+}
+
+.drinkName {
+  grid-row: 1/2;
+  grid-column: 1/3;
+  font-weight: 600;
+}
+
+.drinkPrice {
+  grid-row: 1/2;
+  grid-column: 3/4;
+  font-weight: 700;
+}
+
+.drinkDescription {
+  padding-bottom: 5px;
+  padding-right: 35px;
+  grid-row: 2/3;
+  grid-column: 1/4;
+  font-size: small;
+}
+
+.notePadAddbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--secondary-bg-color);
+  color: var(--main-bodybg-color);
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 88%;
+  margin-bottom: 0.5%;
+  grid-row: 3/4;
+  grid-column: 1/4;
+}
+
+.notePadAddbtn:hover {
+  background-color: darkred;
+}
+
+.subHeading {
+  font-size: 1.5rem;
+  font-family: var(--main-font-family);
+  border-bottom: 2px dotted var(--main-font-color);
+  width: fit-content;
+  margin: 30px 0px 20px 10px;
+}

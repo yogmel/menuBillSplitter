@@ -35,7 +35,8 @@
 }
 
 .menuSelectBtn {
-  padding: 8px;
+  padding: 6px;
+  width: 105px;
   margin: 0 5px;
   border: 3px solid var(--main-secondary-color);
   border-radius: 20px;
@@ -43,7 +44,7 @@
   font-family: var(--main-font-family);
   font-weight: 700;
   color: var(--main-font-color);
-  font-size: 1.15rem;
+  font-size: 0.75rem;
 }
 
 .menuItemsContainer {
@@ -92,7 +93,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 34px;
   height: 34px;
   border: none;

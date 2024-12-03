@@ -10,12 +10,13 @@
   <body>
     <header>
       <nav class="navBar">
-        <a href="#" class="navBranding"
-          ><img
+        <a href="#" class="navBranding">
+          <img
             src="../assist/logos/tacoHeadLogo.png"
             alt="Taco Head Logo"
             class="navBarLogo"
-        /></a>
+          />
+        </a>
         <ul class="navMenu">
           <li class="navItem">
             <a href="../menusLP/main.html" class="navLink">Home</a>
@@ -27,8 +28,8 @@
           </li>
           <li class="navItem">
             <a href="../hotRamen/hotRamen.html" class="navLink"
-              >Hot Ramen Menu
-            </a>
+              >Hot Ramen Menu</a
+            >
           </li>
           <li class="navItem">
             <a href="../theBarMenu/theBarMenu.html" class="navLink"
@@ -48,16 +49,10 @@
         </div>
       </nav>
     </header>
+
     <main class="container">
       <div class="wholeMenuContainer">
-        <div class="menuSelectContainer">
-          <a href="tacoHeadMenu.html">
-            <button class="menuSelectBtn" id="tacosMenu">TACOS</button></a
-          >
-          <a href="tacoHeadDessertMenu.html">
-            <button class="menuSelectBtn" id="dessertsMenu">DESSERTS</button></a
-          >
-        </div>
+        <!-- Item 1: Al Pastor -->
         <div class="menuItemsContainer">
           <div class="menuItem">
             <img
@@ -66,16 +61,26 @@
               class="menuItemPic"
             />
             <div class="itemDescription">
-              <h4 class="itemHeading">Al Pastor</h4>
-              <h5 class="menuPrice">3x Taco 9,00€</h5>
-              <p class="menuDescription">
+              <h4 class="itemHeading" id="tacoItemOneHeading">Al Pastor</h4>
+              <h5 class="menuPrice">
+                3x Taco <span id="tacoItemOnePrice">9,00</span>€
+              </h5>
+              <p class="menuDescription" id="tacoItemOneDescription">
                 Pork marinated with El Osos own Pastor adobo, grilled on the
-                Trompo. Corn Tortilla Onions Cilantro Pineapple.
+                Trompo. Corn Tortilla, Onions, Cilantro, Pineapple.
               </p>
-              <button class="notePadAddbtn">+</button>
+              <button
+                class="notePadAddbtn"
+                id="tacoItemOneButton"
+                onclick="tacoItemOne()"
+              >
+                +
+              </button>
             </div>
           </div>
         </div>
+
+        <!-- Item 2: Suadero -->
         <div class="menuItemsContainer">
           <div class="menuItem">
             <img
@@ -84,15 +89,25 @@
               class="menuItemPic"
             />
             <div class="itemDescription">
-              <h4 class="itemHeading">Suadero</h4>
-              <h5 class="menuPrice">3x Taco 9,00€</h5>
-              <p class="menuDescription">
+              <h4 class="itemHeading" id="tacoItemTwoHeading">Suadero</h4>
+              <h5 class="menuPrice">
+                3x Taco <span id="tacoItemTwoPrice">9,00</span>€
+              </h5>
+              <p class="menuDescription" id="tacoItemTwoDescription">
                 Confited beef, Corn Tortilla, Onions, Cilantro.
               </p>
-              <button class="notePadAddbtn">+</button>
+              <button
+                class="notePadAddbtn"
+                id="tacoItemTwoButton"
+                onclick="tacoItemTwo()"
+              >
+                +
+              </button>
             </div>
           </div>
         </div>
+
+        <!-- Item 3: Chorizo -->
         <div class="menuItemsContainer">
           <div class="menuItem">
             <img
@@ -101,16 +116,26 @@
               class="menuItemPic"
             />
             <div class="itemDescription">
-              <h4 class="itemHeading">Chorizo</h4>
-              <h5 class="menuPrice">3x Taco 9,00€</h5>
-              <p class="menuDescription">
+              <h4 class="itemHeading" id="tacoItemThreeHeading">Chorizo</h4>
+              <h5 class="menuPrice">
+                3x Taco <span id="tacoItemThreePrice">9,00</span>€
+              </h5>
+              <p class="menuDescription" id="tacoItemThreeDescription">
                 Minced pork seasoned with El Oso Chorizo Adobo. Corn Tortilla,
                 Onions, Cilantro.
               </p>
-              <button class="notePadAddbtn">+</button>
+              <button
+                class="notePadAddbtn"
+                id="tacoItemThreeButton"
+                onclick="tacoItemThree()"
+              >
+                +
+              </button>
             </div>
           </div>
         </div>
+
+        <!-- Item 4: Campechano -->
         <div class="menuItemsContainer">
           <div class="menuItem">
             <img
@@ -119,17 +144,26 @@
               class="menuItemPic"
             />
             <div class="itemDescription">
-              <h4 class="itemHeading">Campechano</h4>
-              <h5 class="menuPrice">3x Taco 9,00€</h5>
-              <p class="menuDescription">
+              <h4 class="itemHeading" id="tacoItemFourHeading">Campechano</h4>
+              <h5 class="menuPrice">
+                3x Taco <span id="tacoItemFourPrice">9,00</span>€
+              </h5>
+              <p class="menuDescription" id="tacoItemFourDescription">
                 Mix of Suadero and Chorizo meat. Corn Tortilla, Onions,
                 Cilantro.
               </p>
-              <button class="notePadAddbtn">+</button>
+              <button
+                class="notePadAddbtn"
+                id="tacoItemFourButton"
+                onclick="tacoItemFour()"
+              >
+                +
+              </button>
             </div>
           </div>
         </div>
 
+        <!-- Item 5: Alambre al Pastor -->
         <div class="menuItemsContainer">
           <div class="menuItem">
             <img
@@ -138,16 +172,28 @@
               class="menuItemPic"
             />
             <div class="itemDescription">
-              <h4 class="itemHeading">Alambre al Pastor</h4>
-              <h5 class="menuPrice">Portion 14,00€</h5>
-              <p class="menuDescription">
+              <h4 class="itemHeading" id="tacoItemFiveHeading">
+                Alambre al Pastor
+              </h4>
+              <h5 class="menuPrice">
+                Portion <span id="tacoItemFivePrice">14,00</span>€
+              </h5>
+              <p class="menuDescription" id="tacoItemFiveDescription">
                 Marinated Pork, Poblano, Cheese, 4 Corn Tortilla, Onions,
                 Cilantro, Pineapple.
               </p>
-              <button class="notePadAddbtn">+</button>
+              <button
+                class="notePadAddbtn"
+                id="tacoItemFiveButton"
+                onclick="tacoItemFive()"
+              >
+                +
+              </button>
             </div>
           </div>
         </div>
+
+        <!-- Item 6: Choriqueso -->
         <div class="menuItemsContainer">
           <div class="menuItem">
             <img
@@ -156,16 +202,26 @@
               class="menuItemPic"
             />
             <div class="itemDescription">
-              <h4 class="itemHeading">Choriqueso</h4>
-              <h5 class="menuPrice">3x Taco 10,00€</h5>
-              <p class="menuDescription">
+              <h4 class="itemHeading" id="tacoItemSixHeading">Choriqueso</h4>
+              <h5 class="menuPrice">
+                3x Taco <span id="tacoItemSixPrice">10,00</span>€
+              </h5>
+              <p class="menuDescription" id="tacoItemSixDescription">
                 Minced pork seasoned with El Oso Chorizo Adobo, cheese, Corn
                 Tortilla, Onions, Cilantro.
               </p>
-              <button class="notePadAddbtn">+</button>
+              <button
+                class="notePadAddbtn"
+                id="tacoItemSixButton"
+                onclick="tacoItemSix()"
+              >
+                +
+              </button>
             </div>
           </div>
         </div>
+
+        <!-- Item 7: Vegan Al Pastor -->
         <div class="menuItemsContainer">
           <div class="menuItem">
             <img
@@ -174,35 +230,29 @@
               class="menuItemPic"
             />
             <div class="itemDescription">
-              <h4 class="itemHeading">Vegan Al Pastor</h4>
-              <h5 class="menuPrice">3x Taco 10,00€</h5>
-              <p class="menuDescription">
-                Pea based protein marinated with El Osos own Pastor adobo,
-                grilled. Corn Tortilla, Onions, Cilantro, Pineapple.
+              <h4 class="itemHeading" id="tacoItemSevenHeading">
+                Vegan Al Pastor
+              </h4>
+              <h5 class="menuPrice">
+                3x Taco <span id="tacoItemSevenPrice">10,00</span>€
+              </h5>
+              <p class="menuDescription" id="tacoItemSevenDescription">
+                Pea-based protein marinated with El Oso's Vegan Pastor adobo,
+                grilled on the Trompo. Corn Tortilla, Onions, Cilantro,
+                Pineapple.
               </p>
-              <button class="notePadAddbtn">+</button>
-            </div>
-          </div>
-        </div>
-        <div class="menuItemsContainer">
-          <div class="menuItem">
-            <img
-              src="../assist/tacoHeadPics/delicious-tacos-arrangement.jpg"
-              alt="Menu Item Image"
-              class="menuItemPic"
-            />
-            <div class="itemDescription">
-              <h4 class="itemHeading">Nopales con Queso</h4>
-              <h5 class="menuPrice">€11</h5>
-              <p class="menuDescription">
-                Nopales (cactus), cheese, Corn Tortilla, Onions, Cilantro.
-              </p>
-              <button class="notePadAddbtn">+</button>
+              <button
+                class="notePadAddbtn"
+                id="tacoItemSevenButton"
+                onclick="tacoItemSeven()"
+              >
+                +
+              </button>
             </div>
           </div>
         </div>
       </div>
     </main>
+    <script src="../main.js"></script>
   </body>
-  <script src="../main.js"></script>
 </html>
