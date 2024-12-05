@@ -96,14 +96,34 @@ let notepad = [];
 
 initialiseNotepad();
 
+// let sum = totalItems.reduce((accumulated, currentItem, index, arr) => {
+//   if (currentItem.active) {
+//     return accumulated + currentItem.price;
+//   } else {
+//     return accumulated;
+//   }
+// }, 0);
+
+// 1st iteration: accumulated = 0, currentItem = "Vegan" obj, index = 0
+// 2nd iteration: accumulated = 4, currentItem = "Pan" obj, index = 1
+// returns 10
+
 function renderNotepad() {
+  let totalItems = [];
+
   let notepadTacoheadEl = document.getElementById("notepadTacohead");
   if (notepadTacoheadEl) {
     notepadTacoheadEl.innerHTML = "";
     let list = document.createElement("ul");
     notepadTacoheadEl.appendChild(list);
-    console.log(notepad);
+
     notepad.forEach((itemNumber, index) => {
+      const item = {
+        name: tacoItems[itemNumber].heading,
+        price: tacoItems[itemNumber].price,
+        active: true,
+      };
+
       // CREATES NEW LIST ITEM
       let listItem = document.createElement("li");
       list.appendChild(listItem);
@@ -120,11 +140,16 @@ function renderNotepad() {
       let checkbox = document.createElement("input");
       checkbox.type = "checkbox";
       checkbox.checked = true;
-      checkbox.id = "checkbox";
+      checkbox.id = "checkbox" + itemNumber + index;
+      checkbox.onclick = function (e) {
+        item.active = e.target.checked;
+        calculateSum(totalItems);
+      };
+
       roundDiv.appendChild(checkbox);
       // CREATES CHECKBOX LABEL
       let label = document.createElement("label");
-      label.setAttribute("for", "checkbox");
+      label.setAttribute("for", "checkbox" + itemNumber + index);
       roundDiv.appendChild(label);
       // CREATES ITEM HEADING
       let itemHeading = document.createElement("h4");
@@ -150,8 +175,24 @@ function renderNotepad() {
         removeItemFromNotepad(index);
       };
       divItem.appendChild(removeButton);
+
+      totalItems.push(item);
     });
+
+    calculateSum(totalItems);
   }
+}
+
+function calculateSum(totalItems) {
+  let sum = totalItems.reduce((accumulated, currentItem, index, arr) => {
+    if (currentItem.active) {
+      return accumulated + currentItem.price;
+    } else {
+      return accumulated;
+    }
+  }, 0);
+
+  console.log("sum", sum);
 }
 
 function addItemToNotepad(itemNumber) {
