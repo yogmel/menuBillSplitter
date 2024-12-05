@@ -78,6 +78,18 @@ let tacoItems = {
     description:
       "Pea-based protein marinated with El Oso's Vegan Pastor adobo, grilled on the Trompo. Corn Tortilla, Onions, Cilantro, Pineapple.",
   },
+  dessertOne: {
+    heading: "Pan Dulce",
+    price: 6,
+    description:
+      "Soft, lightly sweetened bread with orange zest, anise, and a sugar topping.",
+  },
+  dessertTwo: {
+    heading: "Vegan Al Pastor",
+    price: 4,
+    description:
+      "Colorful, sweet Mexican bread with a soft, fluffy texture and a crumbly sugar topping. A breakfast or snack favorite..",
+  },
 };
 
 let notepad = [];
@@ -90,34 +102,47 @@ function renderNotepad() {
     notepadTacoheadEl.innerHTML = "";
     let list = document.createElement("ul");
     notepadTacoheadEl.appendChild(list);
-
+    console.log(notepad);
     notepad.forEach((itemNumber, index) => {
+      // CREATES NEW LIST ITEM
       let listItem = document.createElement("li");
       list.appendChild(listItem);
-
+      // CREATES ITEM COTAINER DIV
       let divItem = document.createElement("div");
       listItem.appendChild(divItem);
       divItem.classList.add("itemDescription");
-
+      // CREATES CHECKBOX DIV
+      let roundDiv = document.createElement("div");
+      roundDiv.classList.add("round");
+      roundDiv.id = "selectItem";
+      divItem.appendChild(roundDiv);
+      // CREATES CHECKBOX
+      let checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.checked = true;
+      checkbox.id = "checkbox";
+      roundDiv.appendChild(checkbox);
+      // CREATES CHECKBOX LABEL
+      let label = document.createElement("label");
+      label.setAttribute("for", "checkbox");
+      roundDiv.appendChild(label);
+      // CREATES ITEM HEADING
       let itemHeading = document.createElement("h4");
-      console.log(
-        `TacoItems for itemNumber: ${itemNumber}`,
-        tacoItems[itemNumber]
-      );
+
       itemHeading.textContent = `${tacoItems[itemNumber].heading}`;
       itemHeading.classList.add("itemHeading");
       divItem.appendChild(itemHeading);
-
+      // CREATES ITEM PRICE
       let itemPrice = document.createElement("h5");
       itemPrice.textContent = `${tacoItems[itemNumber].price}€`;
       itemPrice.classList.add("menuPrice");
       divItem.appendChild(itemPrice);
-
+      // CREATES DESCRIPTION
       let menuDescription = document.createElement("p");
       menuDescription.textContent = `${tacoItems[itemNumber].description}`;
       menuDescription.classList.add("menuDescription");
       divItem.appendChild(menuDescription);
-
+      // CREATES REMOVE BUTTON
       let removeButton = document.createElement("button");
       removeButton.textContent = "-";
       removeButton.classList.add("notePadRemovebtn");
