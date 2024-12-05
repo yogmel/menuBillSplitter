@@ -36,20 +36,17 @@ window.addEventListener("scroll", () => {
 });
 
 //------------TACOMENU SELCTIONS ------------------
-
 let tacoItems = {
-  mains:{
-    one: {
+  one: {
     heading: "Al Pastor",
     price: 9,
     description:
       "Pork marinated with El Osos own Pastor adobo, grilled on the Trompo. Corn Tortilla, Onions, Cilantro, Pineapple.",
   },
   two: {
-    heading: "Al Pastor",
+    heading: "Suadero",
     price: 9,
-    description:
-      "Pork marinated with El Osos own Pastor adobo, grilled on the Trompo. Corn Tortilla, Onions, Cilantro, Pineapple.",
+    description: "Confited beef, Corn Tortilla, Onions, Cilantro.",
   },
   three: {
     heading: "Chorizo",
@@ -59,12 +56,12 @@ let tacoItems = {
   },
   four: {
     heading: "Campechano",
-    price: 9,
+    price: 10,
     description:
       "Mix of Suadero and Chorizo meat. Corn Tortilla, Onions, Cilantro.",
   },
   five: {
-    heading: " Alambre al Pastor",
+    heading: "Alambre al Pastor",
     price: 14,
     description:
       "Marinated Pork, Poblano, Cheese, 4 Corn Tortilla, Onions, Cilantro, Pineapple.",
@@ -73,108 +70,78 @@ let tacoItems = {
     heading: "Choriqueso",
     price: 10,
     description:
-      "Minced pork seasoned with El Oso Chorizo Adobo, cheese, CornTortilla, Onions, Cilantro.",
+      "Minced pork seasoned with El Oso Chorizo Adobo, cheese, Corn Tortilla, Onions, Cilantro.",
   },
   seven: {
-    heading: " Vegan Al Pastor",
+    heading: "Vegan Al Pastor",
     price: 10,
     description:
-      " Pea-based protein marinated with El Oso's Vegan Pastor adobo, grilled on the Trompo. Corn Tortilla, Onions, Cilantro, Pineapple",
+      "Pea-based protein marinated with El Oso's Vegan Pastor adobo, grilled on the Trompo. Corn Tortilla, Onions, Cilantro, Pineapple.",
   },
-}
-dsserts:{
-  one:{
-    heading: "Pan De Muerto",
-    price: 6,
-    description:
-      "  Soft, lightly sweetened bread with orange zest, anise, and a sugar topping.",
-  }
-  two:{
-    heading: "Pan Dulce",
-    price: 4,
-    description:
-      " Colorful, sweet Mexican bread with a soft, fluffy texture and a crumbly sugar topping. A breakfast or snack favorite.",
-  }
-}
 };
 
-// Item 1: Al Pastor
-let tacoItemOneHeading = document.getElementById("tacoItemOneHeading");
-let tacoItemOnePrice = document.getElementById("tacoItemOnePrice");
-let tacoItemOneDescription = document.getElementById("tacoItemOneDescription");
-let tacoItemOneButton = document.getElementById("tacoItemOneButton");
+let notepad = [];
 
-// Item 2: Suadero
-let tacoItemTwoHeading = document.getElementById("tacoItemTwoHeading");
-let tacoItemTwoPrice = document.getElementById("tacoItemTwoPrice");
-let tacoItemTwoDescription = document.getElementById("tacoItemTwoDescription");
-let tacoItemTwoButton = document.getElementById("tacoItemTwoButton");
+initialiseNotepad();
 
-// Item 3: Chorizo
-let tacoItemThreeHeading = document.getElementById("tacoItemThreeHeading");
-let tacoItemThreePrice = document.getElementById("tacoItemThreePrice");
-let tacoItemThreeDescription = document.getElementById(
-  "tacoItemThreeDescription"
-);
-let tacoItemThreeButton = document.getElementById("tacoItemThreeButton");
+function renderNotepad() {
+  let notepadTacoheadEl = document.getElementById("notepadTacohead");
+  if (notepadTacoheadEl) {
+    notepadTacoheadEl.innerHTML = "";
+    let list = document.createElement("ul");
+    notepadTacoheadEl.appendChild(list);
 
-// Item 4: Campechano
-let tacoItemFourHeading = document.getElementById("tacoItemFourHeading");
-let tacoItemFourPrice = document.getElementById("tacoItemFourPrice");
-let tacoItemFourDescription = document.getElementById(
-  "tacoItemFourDescription"
-);
-let tacoItemFourButton = document.getElementById("tacoItemFourButton");
+    notepad.forEach((itemNumber, index) => {
+      let listItem = document.createElement("li");
+      list.appendChild(listItem);
 
-// Item 5: Alambre al Pastor
-let tacoItemFiveHeading = document.getElementById("tacoItemFiveHeading");
-let tacoItemFivePrice = document.getElementById("tacoItemFivePrice");
-let tacoItemFiveDescription = document.getElementById(
-  "tacoItemFiveDescription"
-);
-let tacoItemFiveButton = document.getElementById("tacoItemFiveButton");
+      let divItem = document.createElement("div");
+      listItem.appendChild(divItem);
+      divItem.classList.add("itemDescription");
 
-// Item 6: Choriqueso
-let tacoItemSixHeading = document.getElementById("tacoItemSixHeading");
-let tacoItemSixPrice = document.getElementById("tacoItemSixPrice");
-let tacoItemSixDescription = document.getElementById("tacoItemSixDescription");
-let tacoItemSixButton = document.getElementById("tacoItemSixButton");
+      let itemHeading = document.createElement("h4");
+      console.log(
+        `TacoItems for itemNumber: ${itemNumber}`,
+        tacoItems[itemNumber]
+      );
+      itemHeading.textContent = `${tacoItems[itemNumber].heading}`;
+      itemHeading.classList.add("itemHeading");
+      divItem.appendChild(itemHeading);
 
-// Item 7: Vegan Al Pastor
-let tacoItemSevenHeading = document.getElementById("tacoItemSevenHeading");
-let tacoItemSevenPrice = document.getElementById("tacoItemSevenPrice");
-let tacoItemSevenDescription = document.getElementById(
-  "tacoItemSevenDescription"
-);
-let tacoItemSevenButton = document.getElementById("tacoItemSevenButton");
+      let itemPrice = document.createElement("h5");
+      itemPrice.textContent = `${tacoItems[itemNumber].price}€`;
+      itemPrice.classList.add("menuPrice");
+      divItem.appendChild(itemPrice);
 
+      let menuDescription = document.createElement("p");
+      menuDescription.textContent = `${tacoItems[itemNumber].description}`;
+      menuDescription.classList.add("menuDescription");
+      divItem.appendChild(menuDescription);
 
-
-function tacoItemOne() {
-  let newItemDiv = document.createElement("li");
-    newItemDiv.className = "notepadTacoItem";
-    newItemDiv.innerHTML = `
-      <div class="itemDescription">
-        <div class="round" id="selectItem">
-          <input type="checkbox" checked id="checkbox" />
-          <label for="checkbox"></label>
-        </div>
-        <h4 class="itemHeading">${tacoItems.mains.one.heading}</h4>
-        <h5 class="menuPrice">${tacoItems.mains.one.price}€</h5>
-        <p class="menuDescription">${tacoItems.mains.one.description}</p>
-        <button class="notePadRemovebtn" onclick="removeBtn(this)">-</button>
-      </div>
-    `;
+      let removeButton = document.createElement("button");
+      removeButton.textContent = "-";
+      removeButton.classList.add("notePadRemovebtn");
+      removeButton.onclick = function () {
+        removeItemFromNotepad(index);
+      };
+      divItem.appendChild(removeButton);
+    });
+  }
 }
 
-function tacoItemTwo() {}
-function tacoItemThree() {}
-function tacoItemFour() {}
-function tacoItemFive() {}
-function tacoItemSix() {}
-function tacoItemSeven() {}
-function tacoItemEight() {}
+function addItemToNotepad(itemNumber) {
+  notepad.push(itemNumber);
+  localStorage.setItem("notepad", JSON.stringify(notepad));
+  renderNotepad();
+}
 
-function removeBtn(element) {
-  element.closest("li").remove();
+function removeItemFromNotepad(index) {
+  notepad.splice(index, 1);
+  localStorage.setItem("notepad", JSON.stringify(notepad));
+  renderNotepad();
+}
+
+function initialiseNotepad() {
+  notepad = JSON.parse(localStorage.getItem("notepad")) || [];
+  renderNotepad();
 }

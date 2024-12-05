@@ -52,6 +52,15 @@
 
     <main class="container">
       <div class="wholeMenuContainer">
+        <div class="menuSelectContainer">
+          <a href="tacoHeadMenu.html">
+            <button class="menuSelectBtn" id="tacosMenu">TACOS</button></a
+          >
+          <a href="tacoHeadDessertMenu.html">
+            <button class="menuSelectBtn" id="dessertsMenu">DESSERTS</button></a
+          >
+        </div>
+      <div class="wholeMenuContainer">
         <!-- Item 1: Al Pastor -->
         <div class="menuItemsContainer">
           <div class="menuItem">
@@ -72,7 +81,7 @@
               <button
                 class="notePadAddbtn"
                 id="tacoItemOneButton"
-                onclick="tacoItemOne()"
+                onclick="addItemToNotepad('one')"
               >
                 +
               </button>
@@ -99,7 +108,7 @@
               <button
                 class="notePadAddbtn"
                 id="tacoItemTwoButton"
-                onclick="tacoItemTwo()"
+                onclick="addItemToNotepad('two')"
               >
                 +
               </button>
@@ -127,7 +136,7 @@
               <button
                 class="notePadAddbtn"
                 id="tacoItemThreeButton"
-                onclick="tacoItemThree()"
+                onclick="addItemToNotepad('three')"
               >
                 +
               </button>
@@ -155,7 +164,7 @@
               <button
                 class="notePadAddbtn"
                 id="tacoItemFourButton"
-                onclick="tacoItemFour()"
+                onclick="addItemToNotepad('four')"
               >
                 +
               </button>
@@ -185,7 +194,7 @@
               <button
                 class="notePadAddbtn"
                 id="tacoItemFiveButton"
-                onclick="tacoItemFive()"
+                onclick="addItemToNotepad('five')"
               >
                 +
               </button>
@@ -213,7 +222,7 @@
               <button
                 class="notePadAddbtn"
                 id="tacoItemSixButton"
-                onclick="tacoItemSix()"
+                onclick="addItemToNotepad('six')"
               >
                 +
               </button>
@@ -244,7 +253,7 @@
               <button
                 class="notePadAddbtn"
                 id="tacoItemSevenButton"
-                onclick="tacoItemSeven()"
+                onclick="addItemToNotepad('seven')"
               >
                 +
               </button>
@@ -254,5 +263,6 @@
       </div>
     </main>
     <script src="../main.js"></script>
+    <script src="tacoHeadMenu.js"></script>
   </body>
 </html>
